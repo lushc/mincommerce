@@ -58,8 +58,8 @@ cat <<EOF >> /etc/apache2/sites-available/mincommerce
     ServerName mincommerce.dev
     ServerAlias www.mincommerce.dev
 
-    DocumentRoot /var/www/web
-    <Directory /var/www/web>
+    DocumentRoot /var/www/mincommerce/web
+    <Directory /var/www/mincommerce/web>
         # enable the .htaccess rewrites
         AllowOverride All
         Order allow,deny
