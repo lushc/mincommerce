@@ -12,6 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+    /**
+     * Find all products which are featured for promotion
+     * @return array A collection of products
+     */
     public function findAllFeatured()
     {
         return $this->getEntityManager()
