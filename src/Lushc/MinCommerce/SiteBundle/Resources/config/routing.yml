@@ -2,3 +2,7 @@ _site_home:
     resource: "@MinCommerceSiteBundle/Controller/HomeController.php"
     type:     annotation
     prefix:   /
+
+_site_products:
+    resource: "@MinCommerceSiteBundle/Controller/ProductController.php"
+    type:     annotation
