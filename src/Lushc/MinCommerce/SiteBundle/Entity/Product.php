@@ -160,7 +160,7 @@ class Product
     /**
      * Set stockCode
      *
-     * @param string $stockCode
+     * @param  string  $stockCode
      * @return Product
      */
     public function setStockCode($stockCode)
@@ -183,7 +183,7 @@ class Product
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string  $slug
      * @return Product
      */
     public function setSlug($slug)
