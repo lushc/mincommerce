@@ -2,6 +2,7 @@
 
 namespace Lushc\MinCommerce\SiteBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,6 +18,12 @@ class Product
     * @var int
     */
     protected $id;
+
+    /**
+     * @ORM\Column(length=16)
+     * @var string
+     */
+    protected $stockCode;
 
     /**
     * @ORM\Column(type="string", length=150)
@@ -41,6 +48,12 @@ class Product
     * @var boolean
     */
     protected $isFeatured = false;
+
+    /**
+     * @Gedmo\Slug(fields={"name", "stockCode"})
+     * @ORM\Column(length=255)
+     */
+    protected $slug;
 
     /**
      * Get id
@@ -142,5 +155,51 @@ class Product
     public function getIsFeatured()
     {
         return $this->isFeatured;
+    }
+
+    /**
+     * Set stockCode
+     *
+     * @param string $stockCode
+     * @return Product
+     */
+    public function setStockCode($stockCode)
+    {
+        $this->stockCode = $stockCode;
+
+        return $this;
+    }
+
+    /**
+     * Get stockCode
+     *
+     * @return string
+     */
+    public function getStockCode()
+    {
+        return $this->stockCode;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Product
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }
