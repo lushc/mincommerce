@@ -1,0 +1,6 @@
+<h1>Featured Products</h1>
+<ul>
+{% for product in featured_products %}
+    <li>{{ product.name }} (&pound;{{ product.price }})</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,2 @@
+_mincommerce:
+    resource: "@MinCommerceSiteBundle/Resources/config/routing.yml"
