@@ -19,7 +19,7 @@ sudo apt-get -y install     \
  vim
 
 # install composer
-if [ ! -d /usr/local/bin/composer ]; then
+if [ ! -f /usr/local/bin/composer ]; then
     sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin -- --filename=composer
 fi
 
@@ -48,6 +48,11 @@ xdebug.remote_port=9000
 xdebug.remote_handler=dbgp
 xdebug.remote_log="/var/log/xdebug/xdebug.log"
 EOF
+fi
+
+# set PHP timezone
+if [ ! -f /etc/php5/conf.d/timezone.ini ]; then
+    echo 'date.timezone = "Europe/London"' | sudo tee -a /etc/php5/conf.d/timezone.ini
 fi
 
 # create a virtualhost
