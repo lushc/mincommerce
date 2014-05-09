@@ -3,6 +3,11 @@ _site_home:
     type:     annotation
     prefix:   /
 
+_site_categories:
+    resource: "@MinCommerceSiteBundle/Controller/CategoryController.php"
+    type:     annotation
+    prefix:   /cat
+
 _site_products:
     resource: "@MinCommerceSiteBundle/Controller/ProductController.php"
     type:     annotation

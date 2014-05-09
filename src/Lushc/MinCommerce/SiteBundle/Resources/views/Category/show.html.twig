@@ -1,0 +1,7 @@
+<h1>{{ category.name }}</h1>
+
+<ul>
+{% for product in category.products %}
+    <li><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a> (&pound;{{ product.price }})</li>
+{% endfor %}
+</ul>
