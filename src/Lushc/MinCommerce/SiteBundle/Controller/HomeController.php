@@ -14,9 +14,11 @@ class HomeController extends Controller
     */
     public function indexAction()
     {
+        $categoryRepository = $this->getDoctrine()->getRepository('MinCommerceSiteBundle:Category');
         $productRepository = $this->getDoctrine()->getRepository('MinCommerceSiteBundle:Product');
 
         return array(
+            'categories' => $categoryRepository->findAll(),
             'featured_products' => $productRepository->findAllFeatured(),
         );
     }

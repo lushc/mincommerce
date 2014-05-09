@@ -1,6 +1,15 @@
-<h1>Featured Products</h1>
+<h1>MinCommerce</h1>
+
+<h2>Categories</h2>
+<ul>
+{% for category in categories %}
+    <li><a href="{{ url('category_show', {'slug': category.slug}) }}" title="{{ category.name }}">{{ category.name }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>Featured Products</h2>
 <ul>
 {% for product in featured_products %}
-    <li><a href="{{ url('product_show', {'slug': product.slug}) }}">{{ product.name }}</a> (&pound;{{ product.price }})</li>
+    <li><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a> (&pound;{{ product.price }})</li>
 {% endfor %}
 </ul>
