@@ -1,0 +1,14 @@
+{
+    "name": "mincommerce",
+    "version": "0.0.1",
+    "author": {
+        "name": "Chris Lush",
+        "email": "chris.lush@mobilefun.co.uk"
+    },
+    "scripts": {
+        "install": "bower install"
+    },
+    "dependencies": {
+        "bower": "1.3.x"
+    }
+}
