@@ -5,7 +5,7 @@
 
 /node_modules/
 /web/bundles/
-/web/vendor/
+/web/assets/vendor/
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
