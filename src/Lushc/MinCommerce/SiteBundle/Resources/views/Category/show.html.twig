@@ -1,7 +1,9 @@
 <h1>{{ category.name }}</h1>
 
 <ul>
-{% for product in category.products %}
+{% for product in products.currentPageResults %}
     <li><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a> (&pound;{{ product.price }})</li>
 {% endfor %}
 </ul>
+
+<div class="pagerfanta">{{ pagerfanta(products, 'twitter_bootstrap', pagerfanta_opts) }}</div>

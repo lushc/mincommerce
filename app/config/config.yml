@@ -28,6 +28,10 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        pagerfanta_opts:
+            prev_message: '&laquo; Prev'
+            next_message: 'Next &raquo;'
 
 # Assetic Configuration
 assetic:
@@ -74,3 +78,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Pagerfanta Configuration
+white_october_pagerfanta:
+    exceptions_strategy:
+        out_of_range_page:        to_http_not_found
+        not_valid_current_page:   to_http_not_found
