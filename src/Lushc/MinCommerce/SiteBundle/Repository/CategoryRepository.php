@@ -12,4 +12,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class CategoryRepository extends EntityRepository
 {
+    /**
+     * Find all categories which don't have a parent
+     * @return array An array of Category entities
+     */
+    public function findAllTopLevel()
+    {
+        return $this->getEntityManager()
+                    ->createQuery(
+                        'SELECT c FROM MinCommerceSiteBundle:Category c
+                        WHERE c.parent IS NULL'
+                    )
+                    ->getResult();
+    }
 }
