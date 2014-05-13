@@ -20,11 +20,9 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
 
         $this->walkThroughCategories(array(
             'Samsung Galaxy' => array(
-                'Galaxy S5 Batteries',
                 'Galaxy S5 Cases',
             ),
             'HTC' => array(
-                'HTC One M8 Batteries',
                 'HTC One M8 Cases',
             ),
         ));
