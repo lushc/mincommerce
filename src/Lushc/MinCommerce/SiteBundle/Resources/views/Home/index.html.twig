@@ -2,47 +2,43 @@
 
 {% block title '- Home' %}
 
+{% block stylesheets %}
+<link href="{{ asset('assets/vendor/flexslider/flexslider.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
-    <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-    </div>
+    <div class="jumbotron flexsider">
+        <ul class="slides">
+            <li>
+                <h1>Marketing heading</h1>
+                <blockquote>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous</footer>
+                </blockquote>
 
+                <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+            </li>
+            <li>
+                <h1>Product heading</h1>
+                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <p><a class="btn btn-lg btn-success" href="#" role="button">Buy now</a></p>
+            </li>
+        </ul>
+    </div>
+    {% for row in featured_products|batch(2) %}
     <div class="row marketing">
+        {% for product in row %}
         <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            <div class="marketing-product thumbnail">
+                <img data-src="holder.js/100%x150/textmode:literal" alt="...">
+                <div class="caption">
+                    <h4><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a></h4>
+                    <p>{{ product.description }}</p>
+                    <h4>&pound;{{ product.price }}</h4>
+                </div>
+            </div>
         </div>
-
-        <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+        {% endfor %}
     </div>
-
-<h2>Categories</h2>
-<ul>
-{% for category in categories %}
-    <li><a href="{{ url('category_show', {'slug': category.slug}) }}" title="{{ category.name }}">{{ category.name }}</a></li>
-{% endfor %}
-</ul>
-<h2>Featured Products</h2>
-<ul>
-{% for product in featured_products %}
-    <li><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a> (&pound;{{ product.price }})</li>
-{% endfor %}
-</ul>
+    {% endfor %}
 {% endblock %}

@@ -2,6 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background: url("../img/photography.png") #FAFAFA repeat fixed;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -24,9 +25,14 @@ body {
   line-height: 40px;
 }
 
+.navbar-default {
+  background-color: #fafafa;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
+  margin-top: 40px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
@@ -45,18 +51,32 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
 }
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+/* Put the slider nav inside the jumbotron */
+.jumbotron .flex-control-nav {
+  position: relative;
 }
-.marketing p + h4 {
-  margin-top: 28px;
+
+/* Supporting marketing content */
+.marketing h4 {
+  line-height: 1.4;
+}
+
+.marketing-product {
+  border: 0 none;
+  padding: 4px 0;
+  background: #fafafa;
+}
+
+.marketing-product > img {
+    border-radius: 4px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -71,9 +91,5 @@ body {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
