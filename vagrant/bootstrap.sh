@@ -26,8 +26,8 @@ fi
 XDEBUG_LOG_DIR=/var/log/xdebug
 if [ ! -d "$XDEBUG_LOG_DIR" ]; then
 # install xdebug
-mkdir "$XDEBUG_LOG_DIR"
-chown www-data:www-data "$XDEBUG_LOG_DIR"
+sudo mkdir "$XDEBUG_LOG_DIR"
+sudo chown www-data:www-data "$XDEBUG_LOG_DIR"
 sudo pecl install xdebug
 
 # configure xdebug
@@ -46,7 +46,7 @@ xdebug.remote_autostart=0
 xdebug.remote_connect_back=1
 xdebug.remote_port=9000
 xdebug.remote_handler=dbgp
-xdebug.remote_log="/var/log/xdebug/xdebug.log"
+xdebug.remote_log="$XDEBUG_LOG_DIR/xdebug.log"
 EOF
 fi
 
