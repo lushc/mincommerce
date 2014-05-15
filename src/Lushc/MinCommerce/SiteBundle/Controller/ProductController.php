@@ -17,6 +17,10 @@ class ProductController extends Controller
         $repository = $this->getDoctrine()->getRepository('MinCommerceSiteBundle:Product');
         $product = $repository->findOneBySlug($slug);
 
+        if (!$product) {
+            throw $this->createNotFoundException('The requested product does not exist.');
+        }
+
         return array(
             'product' => $product,
         );
