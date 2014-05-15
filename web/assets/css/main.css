@@ -97,7 +97,8 @@ a:focus {
 }
 
 /* Put the slider nav inside the jumbotron */
-.jumbotron .flex-control-nav {
+.jumbotron .flex-control-nav,
+.jumbotron .flex-direction-nav {
   position: relative;
 }
 
