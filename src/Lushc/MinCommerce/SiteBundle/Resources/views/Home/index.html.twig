@@ -33,7 +33,7 @@
                 <img data-src="holder.js/100%x150/textmode:literal" alt="...">
                 <div class="caption">
                     <h4><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a></h4>
-                    <p>{{ product.description }}</p>
+                    <p>{{ product.description|truncate(120, true, '... <a href="' ~ url('product_show', {'slug': product.slug}) ~ '">more</a>')|raw }}</p>
                     <h4>&pound;{{ product.price }}</h4>
                 </div>
             </div>
