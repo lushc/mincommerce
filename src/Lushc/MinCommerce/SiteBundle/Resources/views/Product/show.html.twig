@@ -3,7 +3,7 @@
 {% block title '- ' ~ product.name %}
 
 {% block content %}
-    <h2>{{ product.name }}</h2>
+    <h1>{{ product.name }}</h1>
     {% if product.isFeatured %}
     <div class="row">
         <div class="col-lg-6 featured-product">
@@ -22,7 +22,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 product-description">
             <p>{{ product.description }}</p>
             <span class="price">&pound;{{ product.price }}</span>
             <a class="btn btn-success" href="#" role="button"><i class="fa fa-shopping-cart"></i> Add to basket</a>

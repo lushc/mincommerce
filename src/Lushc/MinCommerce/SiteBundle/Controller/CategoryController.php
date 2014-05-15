@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
         // set up pagination
         $pagerfanta = new Pagerfanta(new DoctrineCollectionAdapter($products));
-        $pagerfanta->setMaxPerPage(5);
+        $pagerfanta->setMaxPerPage(6);
 
         $request = $this->getRequest();
         $page = (is_numeric($request->query->get('page')) ? (int) $request->query->get('page') : 1);
