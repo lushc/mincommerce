@@ -147,6 +147,14 @@ a:focus {
   right: 0;
 }
 
+.btn {
+  transition: all 0.5s ease;
+}
+
+.category-buy-button:hover .fa:after {
+  content: " Add to basket";
+}
+
 /* Product view */
 .featured-product {
   margin-bottom: 10px;
