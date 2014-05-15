@@ -1,0 +1,8 @@
+{% extends "MinCommerceSiteBundle::layout.html.twig" %}
+{% use "WebfactoryExceptionsBundle:Exception:blocks.html.twig" %}
+
+{% block title %} - {{ exception.getStatusCode }}{% endblock %}
+
+{% block content %}
+    {{ block('webfactory_exceptions_standardExceptionPage') }}
+{% endblock %}

@@ -14,7 +14,7 @@ class ProductRepository extends EntityRepository
 {
     /**
      * Find all products which are featured for promotion
-     * @return array A collection of products
+     * @return array An array of Product entities
      */
     public function findAllFeatured()
     {

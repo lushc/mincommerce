@@ -16,7 +16,13 @@ sudo apt-get -y install     \
  build-essential            \
  curl                       \
  git                        \
- vim
+ vim                        \
+ python-software-properties
+
+# install nodeJS
+sudo apt-add-repository -y ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
 
 # install composer
 if [ ! -f /usr/local/bin/composer ]; then

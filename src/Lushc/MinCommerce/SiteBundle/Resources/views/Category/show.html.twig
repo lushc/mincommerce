@@ -1,9 +1,28 @@
-<h1>{{ category.name }}</h1>
+{% extends "MinCommerceSiteBundle::layout.html.twig" %}
 
-<ul>
-{% for product in products.currentPageResults %}
-    <li><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a> (&pound;{{ product.price }})</li>
-{% endfor %}
-</ul>
+{% block title '- ' ~ category.name %}
 
-<div class="pagerfanta">{{ pagerfanta(products, 'twitter_bootstrap', pagerfanta_opts) }}</div>
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    {% for row in products.currentPageResults|batch(3) %}
+    <div class="row">
+        {% for product in row %}
+        <div class="col-lg-4">
+            <div class="category-product thumbnail">
+                <img data-src="holder.js/100%x150/textmode:literal" alt="...">
+                <div class="caption">
+                    <h2 class="product-title"><a href="{{ url('product_show', {'slug': product.slug}) }}" title="{{ product.name }}">{{ product.name }}</a></h2>
+                    <span class="price">&pound;{{ product.price }}</span>
+                </div>
+                <a class="btn btn-sm btn-success category-buy-button" href="#" role="button"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="pagerfanta">{{ pagerfanta(products, 'twitter_bootstrap3', pagerfanta_opts) }}</div>
+        </div>
+    </div>
+{% endblock %}

@@ -3,7 +3,9 @@
 *.sublime-project
 *.sublime-workspace
 
+/node_modules/
 /web/bundles/
+/web/assets/vendor/
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml

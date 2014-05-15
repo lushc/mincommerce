@@ -37,10 +37,24 @@ class Category
      */
     protected $products;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
+     */
+    protected $children;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE")
+     */
+    protected $parent;
+
     public function __construct()
     {
         // each category contains a collection of products
         $this->products = new ArrayCollection();
+
+        // each category can be a parent and contain child categories
+        $this->children = new ArrayCollection();
     }
 
     /**
@@ -130,5 +144,61 @@ class Category
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Add children
+     *
+     * @param \Lushc\MinCommerce\SiteBundle\Entity\Category $children
+     * @return Category
+     */
+    public function addChild(Category $children)
+    {
+        $this->children[] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Remove children
+     *
+     * @param \Lushc\MinCommerce\SiteBundle\Entity\Category $children
+     */
+    public function removeChild(Category $children)
+    {
+        $this->children->removeElement($children);
+    }
+
+    /**
+     * Get children
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    /**
+     * Set parent
+     *
+     * @param \Lushc\MinCommerce\SiteBundle\Entity\Category $parent
+     * @return Category
+     */
+    public function setParent(Category $parent = null)
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return \Lushc\MinCommerce\SiteBundle\Entity\Category
+     */
+    public function getParent()
+    {
+        return $this->parent;
     }
 }

@@ -9,16 +9,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class HomeController extends Controller
 {
     /**
-    * @Route("/", name="_home")
+    * @Route("/", name="home")
     * @Template()
     */
     public function indexAction()
     {
-        $categoryRepository = $this->getDoctrine()->getRepository('MinCommerceSiteBundle:Category');
         $productRepository = $this->getDoctrine()->getRepository('MinCommerceSiteBundle:Product');
 
         return array(
-            'categories' => $categoryRepository->findAll(),
             'featured_products' => $productRepository->findAllFeatured(),
         );
     }
