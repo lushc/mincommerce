@@ -1,6 +1,31 @@
-<h2>{{ product.name }}</h2>
-<i>{{ product.category.name }}</i>
-<br />
-&pound;{{ product.price }} {{ product.isFeatured ? '(promotional price)' }}
+{% extends "MinCommerceSiteBundle::layout.html.twig" %}
 
-<p>{{ product.description }}</p>
+{% block title '- ' ~ product.name %}
+
+{% block content %}
+    <h2>{{ product.name }}</h2>
+    {% if product.isFeatured %}
+    <div class="row">
+        <div class="col-lg-6 featured-product">
+            <i class="fa fa-star"></i> Featured product
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="thumbnails">
+                <img data-src="holder.js/100%x300/textmode:literal" alt="...">
+                <ul>
+                    <li><a href="#"><img data-src="holder.js/100x100/" alt="..."></a></li>
+                    <li><a href="#"><img data-src="holder.js/100x100/" alt="..."></a></li>
+                    <li><a href="#"><img data-src="holder.js/100x100/" alt="..."></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <p>{{ product.description }}</p>
+            <span class="price">&pound;{{ product.price }}</span>
+            <a class="btn btn-success" href="#" role="button"><i class="fa fa-shopping-cart"></i> Add to basket</a>
+        </div>
+    </div>
+{% endblock %}

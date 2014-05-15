@@ -74,7 +74,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 716px;
   }
 }
 .container-narrow > hr {
@@ -114,6 +114,46 @@ a:focus {
 .marketing-product > img {
     border-radius: 4px;
     border-bottom: 1px solid #e5e5e5;
+}
+
+/* Product view */
+.featured-product {
+  margin: 10px 0;
+}
+
+.featured-product > .fa-star {
+  color: #5cb85c;
+  font-size: 16px;
+}
+
+.thumbnails ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.thumbnails li {
+  display: inline-block;
+  margin-top: 10px;
+  padding-left: 10px;
+  height: 100px;
+}
+
+.thumbnails li:first-child {
+  padding-left: 0;
+}
+
+.thumbnails img {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5cb85c;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 /* Responsive: Portrait tablets and up */
