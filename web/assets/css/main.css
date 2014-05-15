@@ -155,6 +155,44 @@ a:focus {
   content: " Add to basket";
 }
 
+.pagerfanta {
+  text-align: center;
+}
+
+/* Override default Bootstrap pagination styles */
+.pagination > li > a,
+.pagination > li > span,
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  background-color: inherit;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #777777;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #555555;
+}
+
 /* Product view */
 .featured-product {
   margin-bottom: 10px;
