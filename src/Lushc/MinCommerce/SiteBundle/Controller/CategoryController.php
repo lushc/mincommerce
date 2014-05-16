@@ -37,8 +37,7 @@ class CategoryController extends Controller
 
         try {
             $pagerfanta->setCurrentPage($page);
-        }
-        catch (NotValidCurrentPageException $e) {
+        } catch (NotValidCurrentPageException $e) {
             throw new NotFoundHttpException();
         }
 

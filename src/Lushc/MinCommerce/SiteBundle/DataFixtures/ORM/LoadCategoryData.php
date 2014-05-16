@@ -42,9 +42,9 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
     /**
      * Walks through a multi-dimensional array of category names, creating the appropriate
      * entities and persisting them.
-     * @param  array  $array    The array to recursively walk through
-     * @param  Category $parent The parent entity for the current category
-     * @param  string $path     The reference path that makes the category available in other fixtures
+     * @param array    $array  The array to recursively walk through
+     * @param Category $parent The parent entity for the current category
+     * @param string   $path   The reference path that makes the category available in other fixtures
      */
     private function walkThroughCategories(array $array, $parent = null, $path = 'category')
     {
@@ -58,8 +58,7 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
                 if ($parent) {
                     $category->setParent($parent);
                 }
-            }
-            else {
+            } else {
                 // node has childen in an array, so the key is the category name
                 $category->setName($k);
             }

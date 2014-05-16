@@ -149,7 +149,7 @@ class Category
     /**
      * Add children
      *
-     * @param \Lushc\MinCommerce\SiteBundle\Entity\Category $children
+     * @param  \Lushc\MinCommerce\SiteBundle\Entity\Category $children
      * @return Category
      */
     public function addChild(Category $children)
@@ -182,7 +182,7 @@ class Category
     /**
      * Set parent
      *
-     * @param \Lushc\MinCommerce\SiteBundle\Entity\Category $parent
+     * @param  \Lushc\MinCommerce\SiteBundle\Entity\Category $parent
      * @return Category
      */
     public function setParent(Category $parent = null)

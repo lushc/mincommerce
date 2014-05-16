@@ -28,8 +28,8 @@ class CategoryRepository extends EntityRepository
 
     /**
      * Find a category which has no parent by its slug
-     * @param  string $slug The SEO-friendly name of the category
-     * @return Lushc\MinCommerce\SiteBundle\Entity\Category A Category entity
+     * @param  string                                        $slug The SEO-friendly name of the category
+     * @return \Lushc\MinCommerce\SiteBundle\Entity\Category A Category entity
      */
     public function findOneChildBySlug($slug)
     {
