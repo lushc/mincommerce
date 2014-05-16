@@ -13,6 +13,7 @@ sudo apt-get -y install     \
  php5                       \
  php5-dev                   \
  php-pear                   \
+ php5-sqlite                \
  build-essential            \
  curl                       \
  git                        \
