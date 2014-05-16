@@ -93,6 +93,11 @@ if [ ! -h /etc/apache2/sites-enabled/mincommerce ]; then
 sudo a2ensite mincommerce
 fi
 
+# disable the default site
+if [ -h /etc/apache2/sites-enabled/000-default ]; then
+sudo a2dissite default
+fi
+
 # enable mod_rewrite
 if [ ! -h /etc/apache2/mods-enabled/rewrite.load ]; then
 sudo a2enmod rewrite
