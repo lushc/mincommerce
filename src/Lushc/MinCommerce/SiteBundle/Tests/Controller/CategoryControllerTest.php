@@ -119,6 +119,13 @@ class CategoryControllerTest extends WebTestCase
             return $node->text();
         });
 
+        // assert that the second page is showing products
+        $this->assertGreaterThan(
+            0,
+            count($secondPageProducts),
+            'No products were present on the second category page'
+        );
+
         // assert that there are not any duplicate products
         $products = array_merge($firstPageProducts, $secondPageProducts);
         $this->assertFalse(count($products) !== count(array_unique($products)), 'Products from page 1 appeared on page 2');
