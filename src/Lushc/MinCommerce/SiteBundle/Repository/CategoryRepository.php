@@ -25,4 +25,20 @@ class CategoryRepository extends EntityRepository
                     )
                     ->getResult();
     }
+
+    /**
+     * Find a category which has no parent by its slug
+     * @param  string $slug The SEO-friendly name of the category
+     * @return Lushc\MinCommerce\SiteBundle\Entity\Category A Category entity
+     */
+    public function findOneChildBySlug($slug)
+    {
+        return $this->getEntityManager()
+                    ->createQuery(
+                        'SELECT c FROM MinCommerceSiteBundle:Category c
+                        WHERE c.slug = :slug AND c.parent IS NOT NULL'
+                    )
+                    ->setParameter('slug', $slug)
+                    ->getOneOrNullResult();
+    }
 }

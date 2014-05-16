@@ -13,14 +13,14 @@ use Pagerfanta\Exception\NotValidCurrentPageException;
 class CategoryController extends Controller
 {
     /**
-    * @Route("/{slug}", name="category_show")
+    * @Route("/{slug}", requirements={"slug" = ".*"}, name="category_show")
     * @Template()
     */
     public function showAction($slug)
     {
         // get the requested category and its products
         $repository = $this->getDoctrine()->getRepository('MinCommerceSiteBundle:Category');
-        $category = $repository->findOneBySlug($slug);
+        $category = $repository->findOneChildBySlug($slug);
 
         if (!$category) {
             throw $this->createNotFoundException('The requested category does not exist.');
