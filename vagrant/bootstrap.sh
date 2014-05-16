@@ -111,3 +111,6 @@ sudo chown -R vagrant:www-data /var/lock/apache2
 
 # restart apache with its new configuration
 sudo service apache2 restart
+
+# make the install script executable
+sudo chmod u+x /var/www/mincommerce/postinstall.sh
