@@ -4,6 +4,8 @@
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password vagrant'
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password vagrant'
 
+sudo apt-add-repository -y ppa:chris-lea/node.js
+
 # install required packages
 sudo apt-get update
 sudo apt-get -y install     \
@@ -18,12 +20,8 @@ sudo apt-get -y install     \
  curl                       \
  git                        \
  vim                        \
- python-software-properties
-
-# install nodeJS
-sudo apt-add-repository -y ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs
+ python-software-properties \
+ nodejs
 
 # install composer
 if [ ! -f /usr/local/bin/composer ]; then
