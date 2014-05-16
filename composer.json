@@ -26,7 +26,9 @@
         "knplabs/knp-menu-bundle": "2.0.*@dev"
     },
     "require-dev": {
-        "webfactory/exceptions-bundle": "@stable"
+        "webfactory/exceptions-bundle": "@stable",
+        "phpunit/phpunit": "4.1.*",
+        "liip/functional-test-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

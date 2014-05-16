@@ -4,10 +4,8 @@ namespace Lushc\MinCommerce\SiteBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class HomeControllerTest extends WebTestCase
 {
-    // TODO: Implement tests
-
     public function testIndex()
     {
     }
